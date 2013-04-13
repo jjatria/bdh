@@ -6,11 +6,30 @@
  <title>JJA</title>
  <meta charset="utf-8" />
  <script type="text/javascript">
-  if (window.File && window.FileReader && window.FileList && window.Blob) {
-    // Great success! All the File APIs are supported.
-    alert('Success!');
-  } else {
-    alert('The File APIs are not fully supported in this browser.');
+  var txtFile = new XMLHttpRequest();
+  var lines;
+  txtFile.open("GET", "http://www.ucl.ac.uk/~ucjt465/bdh/data/twitter_lookup.json", true);
+  txtFile.onreadystatechange = function()
+  {
+    if (txtFile.readyState === 4) {  // document is ready to parse.
+//       alert("WTF?");
+      if (txtFile.status === 200) {  // file is found
+//         alert("Is found");
+        allText = txtFile.responseText; 
+        lines = txtFile.responseText.split("\n");
+        alert(lines[1])
+      }/* else {
+        alert("My Error!");
+      }*/
+    } /*else {
+//       alert("My Error 2!");
+    }*/
+  };
+  txtFile.send(null);
+  console.log("Test");
+  alert(lines[2]);
+  for( var i in lines ) {
+    console.log(lines[i]);
   }
  </script>
 </head>
