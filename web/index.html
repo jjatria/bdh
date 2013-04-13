@@ -5,27 +5,34 @@
 <head>
  <title>JJA</title>
  <meta charset="utf-8" />
- <script type="text/javascript">
-  var contentType = "application/x-www-form-urlencoded; charset=utf-8";
-  var request = new XMLHttpRequest();
-  var lines;
-  request.open("GET", "http://www.ucl.ac.uk/~ucjt465/bdh/data/twitter_lookup.json", false);
-  request.setRequestHeader('Content-type', contentType);
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+ <script type="text/javascript">  
+  $(document).ready(function() {
+    var contentType = "application/x-www-form-urlencoded; charset=utf-8";
+    var request = new XMLHttpRequest();
+    var lines;
+    request.open("GET", "http://www.ucl.ac.uk/~ucjt465/bdh/data/twitter_lookup.json", false);
+    request.setRequestHeader('Content-type', contentType);
 
-  if (request.overrideMimeType) request.overrideMimeType(contentType);
+    if (request.overrideMimeType) request.overrideMimeType(contentType);
 
-  // exception handling
-  try { request.send(null); } catch (e) { return null; }
-  if (request.status == 500 || request.status == 404 || request.status == 2 || (request.status == 0 && request.responseText == '')) return null;
+    // exception handling
+    try { request.send(null); } catch (e) { return null; }
+    if (request.status == 500 || request.status == 404 || request.status == 2 || (request.status == 0 && request.responseText == '')) return null;
 
-  lines = request.responseText.split('\n')
-  for( var i in lines ) {
-    console.log(lines[i]);
-  }
+    lines = request.responseText.split('\n')
+    for( var i in lines ) {
+      var twat = JSON.parse(lines[i]);
+      document.getElementById('twatlist').innerHTML += twat.screen_name + '<img src="' + twat.profile_image_url + '"</img></br>';
+    }
+  });
  </script>
 </head>
 
 <body>
+
+<div id='twatlist'>
+</div>
 
 </body>
 </html>
