@@ -6,28 +6,19 @@
  <title>JJA</title>
  <meta charset="utf-8" />
  <script type="text/javascript">
-  var txtFile = new XMLHttpRequest();
+  var contentType = "application/x-www-form-urlencoded; charset=utf-8";
+  var request = new XMLHttpRequest();
   var lines;
-  txtFile.open("GET", "http://www.ucl.ac.uk/~ucjt465/bdh/data/twitter_lookup.json", true);
-  txtFile.onreadystatechange = function()
-  {
-    if (txtFile.readyState === 4) {  // document is ready to parse.
-//       alert("WTF?");
-      if (txtFile.status === 200) {  // file is found
-//         alert("Is found");
-        allText = txtFile.responseText; 
-        lines = txtFile.responseText.split("\n");
-        alert(lines[1])
-      }/* else {
-        alert("My Error!");
-      }*/
-    } /*else {
-//       alert("My Error 2!");
-    }*/
-  };
-  txtFile.send(null);
-  console.log("Test");
-  alert(lines[2]);
+  request.open("GET", "http://www.ucl.ac.uk/~ucjt465/bdh/data/twitter_lookup.json", false);
+  request.setRequestHeader('Content-type', contentType);
+
+  if (request.overrideMimeType) request.overrideMimeType(contentType);
+
+  // exception handling
+  try { request.send(null); } catch (e) { return null; }
+  if (request.status == 500 || request.status == 404 || request.status == 2 || (request.status == 0 && request.responseText == '')) return null;
+
+  lines = request.responseText.split('\n')
   for( var i in lines ) {
     console.log(lines[i]);
   }
@@ -35,7 +26,6 @@
 </head>
 
 <body>
-
 
 </body>
 </html>
