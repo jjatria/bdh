@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+ <title>Ladies and gentlemen!</title>
+ <meta charset="utf-8" />
+ <link rel="stylesheet" href="style.css" />
+ <script src="jquery.js" ></script>
+ <script type="text/javascript">  
+  function idSort(a,b) {
+     return a.id - b.id;
+  }
+
+  function exIdSort(a,b) {
+    return a.twitter.id - b.twitter.id;
+  }
+
+  function peerindexSort(a,b) {
+    return a.extended.peerindex - b.extended.peerindex;
+  }
+  
+  function readExtended() {
+    $.ajax({
+      url: "data/extended.json",
+      dataType:"text",
+      error: function(request,error) {
+        console.log(arguments);
+        alert ( " Can't do because: " + error );
+      }
+    }).done(function(data){
+      lines = data.split('\n');
+      for( var i in lines ) {
+        if (lines[i] != "") {
+          extwats[i] = $.parseJSON(lines[i]);
+  //         console.log(i +':' + lines[i]);
+        }
+      }
+
+      extwats = extwats.sort(exIdSort);
+      
+//       for (var i in extwats) {
+//         console.log('extwat ' + i + ' has id ' + extwats[i].twitter.id); 
+//       }
+      
+//       console.log("Done reading extended");
+      
+//       console.log("draw " + twats.length + " images");
+    var canvas = document.getElementById("mycanvas");
+    var context = canvas.getContext("2d");
+    
+//     console.log("have " + extwats.length + " extended twats");
+    
+//       twats = twats.sort(peerindexSort);
+    
+    for( var i in extwats ) {
+      twats[i].extended = extwats[i];
+      var me = twats[i];
+//         document.getElementById('twatlist').innerHTML += '<a href="http://twitter.com/' + twats[i].screen_name + '"><img class="avatar" src="' + twats[i].profile_image_url + '" title="' + twats[i].extended.peerindex + '"></img></a>';
+      
+//       console.log(me.screen_name + ' is a twat whose id is ' + me.id + ' and peerindex is ' + me.extended.peerindex); 
+      
+      context.textBaseline = "bottom";
+      context.fillText(me.screen_name, 50, me.extended.peerindex);
+      
+//         var avatar = new Image();
+//         avatar.src = me.profile_image_url;
+//         avatar.onload = function() {
+//           console.log("loaded image for " + me.screen_name);
+//           context.drawImage(avatar, 50, me.extended.peerindex);
+//         };
+//         console.log("next " + i);
+    }
+    
+//     for( var i in twats ) {
+//       var me = twats[i];
+//       document.getElementById('twatlist').innerHTML += '<a href="https://twiter.com/' + me.screen_name + '"><img class="avatar" src="' + me.profile_image_url + '" title="' + me.id + '"></img></a>';
+//     }
+    });
+  }
+
+  var twats = new Array();
+  var extwats = new Array();
+  $.ajax({
+    url: "data/twitter_lookup.json",
+    dataType:"text",
+    error: function(request,error) {
+      console.log(arguments);
+      alert ( " Can't do because: " + error );
+    }
+  }).done(function(data){
+//     console.log("Done reading lookup");
+    
+    lines = data.split('\n');
+    for( var i in lines ) {
+      if (lines[i] != "") {
+        twats[i] = $.parseJSON(lines[i]);
+//         console.log(i +':' + lines[i]);
+      }
+    }
+
+    twats = twats.sort(idSort);
+    
+//     for (var i in twats) {
+//       console.log('twat ' + i + ' has id ' + twats[i].id); 
+//     }
+    
+    readExtended();
+  });
+  
+  
+//   $.ajax({
+//     url: "http://www.ucl.ac.uk/~ucjt465/bdh/data/extended.json",
+//     dataType:"text",
+//     error: function(request,error) {
+//       console.log(arguments);
+//       alert ( " Can't do because: " + error );
+//     }
+//   }).done(function(data){
+//     lines = data.split('\n');
+//     for( var i in lines ) {
+//       if (lines[i] != "") {
+//         twats[i] = $.parseJSON(lines[i]);
+// //         console.log(i +':' + lines[i]);
+//       }
+//     }
+//     for( var i in twats ) {
+//       var me = twats[i];
+//       document.getElementById('twatlist').innerHTML += '<a href="https://twiter.com/' + me.screen_name + '"><img class="avatar" src="' + me.profile_image_url + '" title="' + me.screen_name + '"></img></a>';
+//     }
+//   });
+  
+//   $(document).ready(function(){
+//     var canvas = document.getElementById("mycanvas");
+//     var context = canvas.getContext("2d");
+//     for( var i in twats ) {
+//       context.textBaseline = 'bottom';
+//       context.fillText(twats[i].screen_name, 50, 100-extwats[i].peerindex);
+//     }
+//     context.fillRect(50, 25, 150, 100);
+//   });
+ </script>
+</head>
+
+<body>
+
+<canvas id='mycanvas'></canvas>
+
+<div id='twatlist'></div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+canvas {
+  border: 1px dotted;
+  width: 50%;
+  height: 50%;
+}
+
+.avatar {
+/*   display: inline-block; */
+  width: 48px;
+  height: 48px;
+  margin-top: -5px;
+}
+
+.twatlist {
+  line-height: 0;
+  font: 0;
+}
