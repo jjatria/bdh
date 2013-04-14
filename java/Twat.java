@@ -82,7 +82,9 @@ public class Twat {
 
     JSONObject json = (JSONObject) JSONSerializer.toJSON( test );
     
-    double coolness = json.getDouble( "coolness" );
+    screen_name = json.getDouble("screen_name");
+    
+
     int altitude = json.getInt( "altitude" );
     JSONObject pilot = json.getJSONObject("pilot");
     String firstName = pilot.getString("firstName");
