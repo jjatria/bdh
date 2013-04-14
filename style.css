@@ -1,5 +1,11 @@
+body {
+  margin: 0;
+}
+
 #mycanvas {
   border: 1px dotted;
+  margin: 0;
+  padding: 0;
 }
 
 .avatar {

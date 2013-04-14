@@ -7,49 +7,120 @@
  <meta charset="utf-8" />
  <link rel="stylesheet" href="style.css" />
  <script src="jquery.js" ></script>
+ <script src="jquery.tagcanvas.min.js" type="text/javascript"></script>
  <script type="text/javascript">
- 
   function idSort(a,b) { return a.id - b.id }
-  function pc1Sort(a,b) { return a.pc1 - b.pc1 }
   
+  function sortByKey(obj,key) {
+    return obj.sort(function(a,b) {
+      b[key] - a[key];
+    });
+  }
+
+  var gradient = {
+    0:    '#f00', // red
+    0.33: '#ff0', // yellow
+    0.66: '#0f0', // green
+    1:    '#00f'  // blue
+  };
+ 
+  window.onload = function() {
+    TagCanvas.textColour = '#000000';
+    TagCanvas.textFont = 'Calibri, Arial Black, sans-serif';
+    TagCanvas.outlineColour = '#f96';
+    TagCanvas.outlineThickness = 10;
+    TagCanvas.weightGradient = gradient;
+    TagCanvas.initial = [0.1,-0.1];
+    TagCanvas.zoom = 0.9;
+    try {
+      TagCanvas.Start('myCanvas');
+    } catch(e) {
+      // something went wrong, hide the canvas container
+      document.getElementById('canvasContainer').style.display = 'none';
+    }
+  };
+
   $(document).ready(function(){
-    var canvas = document.getElementById("mycanvas");
+    var canvas = document.getElementById("myCanvas");
     var context = canvas.getContext("2d");
     
     var twats = new Array();
-    $.ajax({
-      url: "data/concise.json",
-      dataType:"text",
-      error: function(request,error) {
-        console.log(arguments);
-        alert ( " Can't do because: " + error );
+    
+    var MIN = 100;
+    var MAX = 0;
+    
+    function draw() {
+    
+      if( ! $('#myCanvas').tagcanvas({
+        outlineThickness : 1,
+        maxSpeed : 0.05,
+        depth : 0.75,
+        weight : true,
+        weightFrom : 'data-weight',
+        weightMode : 'size',
+      })) {
+        // TagCanvas failed to load
+        $('#canvasContainer').hide();
       }
-    }).done(function(data){
-      
-      lines = data.split('\n');
-      for( var i in lines ) {
-        if (lines[i] != "") {
-          twats[i] = $.parseJSON(lines[i]);
+    }    
+    
+    function readJSON() {
+      $.ajax({
+        url: "data/concise.json",
+        dataType:"text",
+        error: function(request,error) {
+          console.log(arguments);
+          alert ( " Can't do because: " + error );
         }
-      }
-
-      twats = twats.sort(idSort);
+      }).done(function(data){
         
-      for( var i in twats ) {
-        var me = twats[i];
-        context.textBaseline = "bottom";
-        context.fillText(me.screen_name, 50, me.pc1);
-      }
-    });
+        lines = data.split('\n');
+        for( var i in lines ) {
+          if (lines[i] != "") {
+            twats[i] = $.parseJSON(lines[i]);
+          }
+        }
+
+        function sortJSON(key) {
+          twats = sortByKey(twats, key);
+            
+          for( var i=0; i<100; i++ ) {
+            var me = twats[i];
+            if (me.pc1 < MIN) MIN = me.pc1;
+            if (me.pc1 > MAX) MAX = me.pc1;
+          }
+          
+          for( var i=0; i<100; i++ ) {
+            var me = twats[i];
+            var weight = ((me.pc1-MIN)*20/MAX)+10;
+            console.log(me.pc1 + ' -> ' + weight);
+            document.getElementById('twatlist').innerHTML += '<li><a href="http://twitter.com/' + me.screen_name + '" data-weight="' +  weight + '">' + me.screen_name + '</a></li>' + "\n";
+          
+          }
+          console.log('min: ' + MIN + '; max: ' + MAX);
+        }
+        sortJSON('pc1');
+        
+        draw();
+        
+      });
+    }
+    readJSON();
+    
   });
  </script>
 </head>
 
 <body>
 
-<canvas id='mycanvas' width="500px" height="500px"></canvas>
+<div id="canvasContainer">
+ <canvas width="800" height="800" id="myCanvas">
+  <ul id='twatlist'>
+  </ul>
+ </canvas>
+</div>
 
-<div id='twatlist'></div>
+<button onclick="JavaScript:alert('YES')">Test</button>
 
 </body>
 </html>
