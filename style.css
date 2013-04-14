@@ -2,9 +2,13 @@ body {
   margin: 0;
 }
 
-#mycanvas {
+#canvasContainer {
+  margin: 0 auto 0;
+  text-align: center;
+}  
+
+#myCanvas {
   border: 1px dotted;
-  margin: 0;
   padding: 0;
 }
 
@@ -18,4 +22,15 @@ body {
 .twatlist {
   line-height: 0;
   font: 0;
+}
+
+#jjcontent {
+  width: 50%;
+  max-width: 100%;
+  margin: 0 auto 0;
+  padding: 0;
+}
+
+#buttons {
+  text-align: center; 
 }
