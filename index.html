@@ -110,25 +110,26 @@
     
     var CLOUDNUM  = 9;
     var CLOUDXROW = 5
+    
     for (var i=0; i<CLOUDNUM; i++) {
-      var row = Math.floor(i/CLOUDXROW);
-      var col = i%CLOUDXROW;
+      var row   = Math.floor(i/CLOUDXROW);
+      var col   = i%CLOUDXROW;
       var fullh = document.height*0.6;
       var fullw = document.width*0.5;
-      var h = fullh / (CLOUDNUM / CLOUDXROW);
-      var w = fullw / CLOUDXROW;
-      var y = Math.floor(Math.random()*h)+(h*row);
-      var x = Math.floor(Math.random()*w)+(w*col);
+      var h     = fullh / (CLOUDNUM / CLOUDXROW);
+      var w     = fullw / CLOUDXROW;
+      var y     = Math.floor(Math.random()*h)+(h*row);
+      var x     = Math.floor(Math.random()*w)+(w*col);
 
       var sky   = document.getElementById('othersky');
       var cloud = document.createElement('div');
-      var link = document.createElement('a');
-      var img = document.createElement('img');
+      var link  = document.createElement('a');
+      var img   = document.createElement('img');
       
       console.log('x='+x+' y='+y);
       
 //    Origin is at top right
-      cloud.style.top = y+'px';
+      cloud.style.top   = y+'px';
       cloud.style.right = x+'px';
       cloud.setAttribute('class', 'cloud');
       link.setAttribute('id', 'cloud'+i);
@@ -154,16 +155,12 @@
 
 <body>
 
-  <div id='othersky'></div>
+  <div id='sky'></div>
 
-  <div id='tagsphere'>
-    <div id="canvasContainer">
-      <canvas id="myCanvas">
-        <ul id='taglist'>
-        </ul>
-      </canvas>
-    </div>
-  </div>
+  <canvas id="tagCanvas">
+    <ul id='taglist'>
+    </ul>
+  </canvas>
 
   <img id='landscape' src="images/landscape.svg">
 
