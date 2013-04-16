@@ -63,12 +63,12 @@
       var best = twiters[0];
 //       console.log('Best: ' + best.screen_name + ' (' + best[key] + ') min: ' + MIN + '; max: ' + MAX);    
       
-      document.getElementById('twatlist').innerHTML = '';
+      document.getElementById('taglist').innerHTML = '';
       for( var i=0; i<SHOW; i++ ) {
         var me = twiters[i];
         var weight = ((me[key]-MIN)*20/(MAX-MIN))+10;
 //         console.log(key + ': ' + me.screen_name + '=' + me[key] + ' (' + weight + ')');
-        document.getElementById('twatlist').innerHTML += '<li><a href="http://twitter.com/' + me.screen_name + '" data-weight="' +  weight + '" target="main">' + me.screen_name + '</a></li>' + "\n";
+        document.getElementById('taglist').innerHTML += '<li><a href="http://twitter.com/' + me.screen_name + '" data-weight="' +  weight + '" target="main">' + me.screen_name + '</a></li>' + "\n";
       }
     }
     
@@ -78,7 +78,7 @@
         dataType:"text",
         error: function(request,error) {
 //           console.log(arguments);
-          alert ( " Can't do because: " + error );
+          alert("Error while reading data: "+error);
         }
       }).done(function(data){
         
@@ -108,8 +108,8 @@
       }
     }    
     
-    var CLOUDNUM  = 8;
-    var CLOUDXROW = 4
+    var CLOUDNUM  = 9;
+    var CLOUDXROW = 5
     for (var i=0; i<CLOUDNUM; i++) {
       var row = Math.floor(i/CLOUDXROW);
       var col = i%CLOUDXROW;
@@ -139,15 +139,15 @@
       sky.appendChild(cloud);
     }
     
-    $("#cloud0").click(function() {console.log('click');redraw('pc1')});
-    $("#cloud1").click(function() {console.log('click');redraw('news')});
-    $("#cloud2").click(function() {console.log('click');redraw('leisure')});
-    $("#cloud3").click(function() {console.log('click');redraw('science')});
-    $("#cloud4").click(function() {console.log('click');redraw('tech')});
-    $("#cloud5").click(function() {console.log('click');redraw('health')});
-    $("#cloud6").click(function() {console.log('click');redraw('sports')});
-    $("#cloud7").click(function() {console.log('click');redraw('arts')});
-    $("#cloud8").click(function() {console.log('click');redraw('business')});
+    $("#cloud0").click(function() {redraw('news')});
+    $("#cloud1").click(function() {redraw('leisure')});
+    $("#cloud2").click(function() {redraw('science')});
+    $("#cloud3").click(function() {redraw('tech')});
+    $("#cloud4").click(function() {redraw('health')});
+    $("#cloud5").click(function() {redraw('sports')});
+    $("#cloud6").click(function() {redraw('arts')});
+    $("#cloud7").click(function() {redraw('business')});
+    $("#cloud8").click(function() {redraw('pc1')});
   });
  </script>
 </head>
@@ -159,7 +159,7 @@
   <div id='tagsphere'>
     <div id="canvasContainer">
       <canvas id="myCanvas">
-        <ul id='twatlist'>
+        <ul id='taglist'>
         </ul>
       </canvas>
     </div>
