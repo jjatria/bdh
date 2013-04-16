@@ -1,36 +1,73 @@
 body {
+  font-family: calibri,arial,sans-serif;
+  font-size: 10pt;
   margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #C9EEFD;
 }
 
-#canvasContainer {
-  margin: 0 auto 0;
-  text-align: center;
-}  
+body#sky {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  z-index: -1;
+}
 
 #myCanvas {
-  border: 1px dotted;
+  position: absolute;
+/*   border: 1px dotted; */
+  margin: 0;
   padding: 0;
+  z-index: 8;
 }
 
-.avatar {
-/*   display: inline-block; */
-  width: 48px;
-  height: 48px;
-  margin-top: -5px;
+#cloudsHolder {
+  position: absolute;
+  z-index: 9;
 }
 
-.twatlist {
-  line-height: 0;
-  font: 0;
+div {
+  margin: 0;
+/*   height: 100%; */
+/*   width: 100%; */
 }
 
-#jjcontent {
-  width: 50%;
-  max-width: 100%;
-  margin: 0 auto 0;
-  padding: 0;
+h1 {
+  color: #818181;
+  font-size: 50px;
+  text-indent: 10px;
 }
 
-#buttons {
-  text-align: center; 
+div#buttons {
+  position: absolute;
+  z-index: 9;
+}
+
+a:hover {
+ cursor: pointer;
+}
+
+#othersky {
+  position: relative;
+}
+#othersky .cloud {
+/*   position: fixed; */
+  position: absolute;
+  z-index: 9;
+}
+#othersky .cloud img {
+  height: 100px;
+}
+
+img#landscape {
+  position: absolute; 
+  float: right;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+  height: 450px;
 }

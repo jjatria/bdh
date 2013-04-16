@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1201"
+   height="506.71875"
+   id="svg4194"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="cloud2t.svg">
+  <defs
+     id="defs4196" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="92.633924"
+     inkscape:cy="141.91907"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1600"
+     inkscape:window-height="838"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4199">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(609.0625,-167.5625)">
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline;opacity:0.8"
+       d="m -197.13393,168.07424 c -103.0883,0 -190.2238,65.67796 -218.7187,155.9375 -11.4339,-2.9598 -23.3239,-4.53125 -35.5626,-4.53125 -86.7876,0 -157.1562,78.67443 -157.1562,175.71875 0,28.12803 5.9293,54.70876 16.4375,78.28125 -10.273,10.58826 -16.4375,24.1282 -16.4375,38.875 0,33.92606 32.6059,61.4375 72.8438,61.4375 318.831,-8.1326 653.04914,-2.875 978.1249,-2.875 67.1024,3.4747 141.4089,-26.13488 149.0313,-82.84375 0,-31.24331 -23.1367,-58.58352 -57.6875,-73.5625 7.6947,-28.19134 11.9687,-59.36446 11.9687,-92.15625 0,-126.23651 -63.3286,-228.5625 -141.4375,-228.5625 -64.46361,0 -118.83887,69.68396 -135.87498,165 -32.91159,-44.7525 -84.59147,-73.59375 -142.6875,-73.59375 -39.274449,0 -75.597449,13.19796 -105.187459,35.5625 -29.542,-88.58085 -115.81026,-152.6875 -217.656261,-152.6875 z"
+       id="path3285"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="scsscsccccsscscs" />
+    <text
+       xml:space="preserve"
+       style="font-size:200px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       x="-364.77676"
+       y="547.13837"
+       id="text15421"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-364.77676"
+         y="547.13837"
+         id="tspan19687">Lifestyle</tspan></text>
+  </g>
+</svg>

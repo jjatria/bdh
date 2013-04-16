@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1209.5625"
+   height="903.875"
+   id="svg4246"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="cloud4t.svg">
+  <defs
+     id="defs4248" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="159.79022"
+     inkscape:cy="334.79407"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1600"
+     inkscape:window-height="838"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4251">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(676.21875,36.71875)">
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline;opacity:0.8"
+       d="m -35.709811,-36.218185 c -200.863599,0 -368.772509,151.570105 -410.187509,354.093805 -10.1098,-1.7373 -20.5593,-2.6563 -31.25,-2.6563 -89.1545,0 -161.4063,63.3287 -161.4063,141.43749 0,36.6135 15.8818,69.9779 41.9376,95.09383 -46.9334,20.9805 -79.0938,63.9205 -79.0938,113.4687 0,70.2191 64.5945,127.125 144.2812,127.125 31.531,0 60.6984,-8.9094 84.4376,-24.0312 3.3777,53.1298 65.9857,95.4687 142.7187,95.4687 41.73531,0 79.28701,-12.5233 105.40631,-32.5 50.1662,22.7558 105.284099,35.375 163.156199,35.375 117.69244,0 224.089311,-52.0465 300.343751,-135.875 22.31308,16.53 58.62668,27.2813 99.65624,27.2813 67.8521,0 122.8438,-29.4258 122.8438,-65.7188 0,-12.6221 -6.6548,-24.395 -18.1875,-34.4062 38.6519,-28.6838 63.9062,-76.1602 63.9062,-129.87503 0,-66.0851 -38.2291,-122.71039 -92.5937,-146.53129 13.4815,-13.3064 21.1875,-28.5902 21.1875,-44.875 0,-38.8988 -43.8158,-72.2102 -105.9375,-86.0312 C 294.30932,82.702055 142.21648,-36.218185 -35.709811,-36.218185 z"
+       id="path3303"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:200px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       x="-524.79022"
+       y="541.44196"
+       id="text16469"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-524.79022"
+         y="541.44196"
+         id="tspan19723">Technology </tspan></text>
+  </g>
+</svg>
